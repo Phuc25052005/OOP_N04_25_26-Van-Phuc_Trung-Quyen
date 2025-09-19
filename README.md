@@ -77,5 +77,29 @@ public class KhachHangDAO {
         danhSach.removeIf(kh -> kh.getId() == id);
     }
 }
+## Activity Diagram - Quản lý Khách hàng
+
+```mermaid
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Khách hàng]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin khách hàng]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách khách hàng]
+    F --> Z
+
+    C -->|Sửa| G[Chọn khách hàng cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn khách hàng cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
 
 
