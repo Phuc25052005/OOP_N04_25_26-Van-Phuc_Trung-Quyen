@@ -141,17 +141,20 @@ public class NhanVien {
     private int id;
     private String ten;
 
-   Quyen"));
-
-        System.out.println("Danh sach nhan vien:");
-        ql.xem();
-
-        ql.sua(1, "Nguyen Van Phuc (Updated)");
-        ql.xoa(2);
-
-        System.out.println("Sau khi cap nhat:");
-        ql.xem();
+    public NhanVien(int id, String ten) {
+        this.id = id;
+        this.ten = ten;
     }
+
+    public int getId() { return id; }
+    public String getTen() { return ten; }
+    public void setTen(String ten) { this.ten = ten; }
+
+    @Override
+    public String toString() {
+        return "NhanVien{id=" + id + ", ten='" + ten + "'}";
+    }
+}
 
 public class QuanLyNhanVien {
     private HashMap<Integer, NhanVien> dsNhanVien = new HashMap<>();
@@ -177,13 +180,13 @@ public class QuanLyNhanVien {
 public class MainNhanVien {
     public static void main(String[] args) {
         QuanLyNhanVien ql = new QuanLyNhanVien();
-        ql.them(new NhanVien(1, "Nguyen Van A"));
-        ql.them(new NhanVien(2, "Tran Thi B"));
+        ql.them(new NhanVien(1, "Nguyen Van Phuc"));
+        ql.them(new NhanVien(2, "Nguyen Trung Quyen"));
 
         System.out.println("Danh sach nhan vien:");
         ql.xem();
 
-        ql.sua(1, "Nguyen Van A (Updated)");
+        ql.sua(1, "Nguyen Van Phuc (Updated)");
         ql.xoa(2);
 
         System.out.println("Sau khi cap nhat:");
