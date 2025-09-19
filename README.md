@@ -104,9 +104,8 @@ flowchart TD
 
 ---
 
-### 2. Activity Diagram – Quản lý **Nhân viên**
 
-```markdown
+
 ## Activity Diagram - Quản lý Nhân viên
 
 ```mermaid
@@ -134,9 +133,8 @@ flowchart TD
 
 ---
 
-### 3. Activity Diagram – Quản lý **Phòng**
 
-```markdown
+
 ## Activity Diagram - Quản lý Phòng
 
 ```mermaid
