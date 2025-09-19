@@ -153,6 +153,44 @@ public class NhanVien {
         ql.xem();
     }
 
+public class QuanLyNhanVien {
+    private HashMap<Integer, NhanVien> dsNhanVien = new HashMap<>();
+
+    public void them(NhanVien nv) {
+        dsNhanVien.put(nv.getId(), nv);
+    }
+
+    public void xem() {
+        dsNhanVien.values().forEach(System.out::println);
+    }
+
+    public void sua(int id, String tenMoi) {
+        if (dsNhanVien.containsKey(id)) {
+            dsNhanVien.get(id).setTen(tenMoi);
+        }
+    }
+
+    public void xoa(int id) {
+        dsNhanVien.remove(id);
+    }
+}
+public class MainNhanVien {
+    public static void main(String[] args) {
+        QuanLyNhanVien ql = new QuanLyNhanVien();
+        ql.them(new NhanVien(1, "Nguyen Van A"));
+        ql.them(new NhanVien(2, "Tran Thi B"));
+
+        System.out.println("Danh sach nhan vien:");
+        ql.xem();
+
+        ql.sua(1, "Nguyen Van A (Updated)");
+        ql.xoa(2);
+
+        System.out.println("Sau khi cap nhat:");
+        ql.xem();
+    }
+}
+
 # Đối tượng Phòng :
 
 import java.util.HashMap;
