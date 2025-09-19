@@ -83,32 +83,75 @@ public class KhachHangDAO {
 
 ---
 
-## Activity Diagram – CRUD cho Khách hàng, Nhân viên, Phòng
+# Hotel Management App
+
+Ứng dụng quản lý khách sạn với các chức năng CRUD cho Khách hàng, Nhân viên và Phòng.  
+
+---
+
+## Activity Diagram – Quản lý Khách hàng
 
 ```mermaid
 flowchart TD
-    A([Người dùng]) --> B{Chọn chức năng nào?}
+    A([Người dùng]) --> B[Chọn chức năng Khách hàng]
+    B --> C{Chọn thao tác nào?}
 
-    B -->|Khách hàng| C1{Chọn thao tác}
-    B -->|Nhân viên| C2{Chọn thao tác}
-    B -->|Phòng| C3{Chọn thao tác}
+    C -->|Thêm| D[Nhập thông tin khách hàng]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
 
-    %% --- Quản lý Khách hàng ---
-    C1 -->|Thêm| D1[Nhập thông tin khách hàng] --> E1[Lưu vào danh sách KH] --> Z
-    C1 -->|Xem| F1[Hiển thị danh sách KH] --> Z
-    C1 -->|Sửa| G1[Chọn KH cần sửa] --> H1[Nhập thông tin mới] --> I1[Cập nhật KH] --> Z
-    C1 -->|Xóa| J1[Chọn KH cần xóa] --> K1[Xóa KH khỏi danh sách] --> Z
+    C -->|Xem| F[Hiển thị danh sách khách hàng]
+    F --> Z
 
-    %% --- Quản lý Nhân viên ---
-    C2 -->|Thêm| D2[Nhập thông tin nhân viên] --> E2[Lưu vào danh sách NV] --> Z
-    C2 -->|Xem| F2[Hiển thị danh sách NV] --> Z
-    C2 -->|Sửa| G2[Chọn NV cần sửa] --> H2[Nhập thông tin mới] --> I2[Cập nhật NV] --> Z
-    C2 -->|Xóa| J2[Chọn NV cần xóa] --> K2[Xóa NV khỏi danh sách] --> Z
+    C -->|Sửa| G[Chọn khách hàng cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
 
-    %% --- Quản lý Phòng ---
-    C3 -->|Thêm| D3[Nhập thông tin phòng] --> E3[Lưu vào danh sách Phòng] --> Z
-    C3 -->|Xem| F3[Hiển thị danh sách Phòng] --> Z
-    C3 -->|Sửa| G3[Chọn Phòng cần sửa] --> H3[Nhập thông tin mới] --> I3[Cập nhật Phòng] --> Z
-    C3 -->|Xóa| J3[Chọn Phòng cần xóa] --> K3[Xóa Phòng khỏi danh sách] --> Z
+    C -->|Xóa| J[Chọn khách hàng cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
 
-    Z([Hoàn tất thao tác])
+    Z --> L([Hoàn tất thao tác])
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Nhân viên]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin nhân viên]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách nhân viên]
+    F --> Z
+
+    C -->|Sửa| G[Chọn nhân viên cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn nhân viên cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Phòng]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin phòng]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách phòng]
+    F --> Z
+
+    C -->|Sửa| G[Chọn phòng cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn phòng cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
