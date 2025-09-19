@@ -77,11 +77,6 @@ public class KhachHangDAO {
         danhSach.removeIf(kh -> kh.getId() == id);
     }
 }
-# Hotel Management App
-
-Ứng dụng quản lý khách sạn với các chức năng CRUD cho Khách hàng, Nhân viên và Phòng.  
-
----
 
 # Hotel Management App
 
@@ -113,6 +108,8 @@ flowchart TD
     K --> Z
 
     Z --> L([Hoàn tất thao tác])
+```
+```mermaid
 flowchart TD
     A([Người dùng]) --> B[Chọn chức năng Nhân viên]
     B --> C{Chọn thao tác nào?}
@@ -134,6 +131,8 @@ flowchart TD
     K --> Z
 
     Z --> L([Hoàn tất thao tác])
+```
+```mermaid
 flowchart TD
     A([Người dùng]) --> B[Chọn chức năng Phòng]
     B --> C{Chọn thao tác nào?}
@@ -155,3 +154,4 @@ flowchart TD
     K --> Z
 
     Z --> L([Hoàn tất thao tác])
+```
