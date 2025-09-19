@@ -102,11 +102,11 @@ flowchart TD
 
     Z --> L([Hoàn tất thao tác])
 
+---
 
+### 2. Activity Diagram – Quản lý **Nhân viên**
 
-
-
-
+```markdown
 ## Activity Diagram - Quản lý Nhân viên
 
 ```mermaid
@@ -132,4 +132,32 @@ flowchart TD
 
     Z --> L([Hoàn tất thao tác])
 
+---
 
+### 3. Activity Diagram – Quản lý **Phòng**
+
+```markdown
+## Activity Diagram - Quản lý Phòng
+
+```mermaid
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Phòng]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin phòng]
+    D --> E[Lưu vào danh sách phòng]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách phòng]
+    F --> Z
+
+    C -->|Sửa| G[Chọn phòng cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn phòng cần xóa]
+    J --> K[Xóa khỏi danh sách phòng]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
