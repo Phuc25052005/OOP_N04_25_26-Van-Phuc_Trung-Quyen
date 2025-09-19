@@ -141,7 +141,27 @@ public class NhanVien {
     private int id;
     private String ten;
 
-    public NhanVien(int id, String ten) {
+   Quyen"));
+
+        System.out.println("Danh sach nhan vien:");
+        ql.xem();
+
+        ql.sua(1, "Nguyen Van Phuc (Updated)");
+        ql.xoa(2);
+
+        System.out.println("Sau khi cap nhat:");
+        ql.xem();
+    }
+
+# Đối tượng Phòng :
+
+import java.util.HashMap;
+
+public class Phong {
+    private int id;
+    private String ten;
+
+    public Phong(int id, String ten) {
         this.id = id;
         this.ten = ten;
     }
@@ -152,43 +172,44 @@ public class NhanVien {
 
     @Override
     public String toString() {
-        return "NhanVien{id=" + id + ", ten='" + ten + "'}";
+        return "Phong{id=" + id + ", ten='" + ten + "'}";
     }
 }
 
-public class QuanLyNhanVien {
-    private HashMap<Integer, NhanVien> dsNhanVien = new HashMap<>();
+public class QuanLyPhong {
+    private HashMap<Integer, Phong> dsPhong = new HashMap<>();
 
-    public void them(NhanVien nv) {
-        dsNhanVien.put(nv.getId(), nv);
+    public void them(Phong p) {
+        dsPhong.put(p.getId(), p);
     }
 
     public void xem() {
-        dsNhanVien.values().forEach(System.out::println);
+        dsPhong.values().forEach(System.out::println);
     }
 
     public void sua(int id, String tenMoi) {
-        if (dsNhanVien.containsKey(id)) {
-            dsNhanVien.get(id).setTen(tenMoi);
+        if (dsPhong.containsKey(id)) {
+            dsPhong.get(id).setTen(tenMoi);
         }
     }
 
     public void xoa(int id) {
-        dsNhanVien.remove(id);
+        dsPhong.remove(id);
     }
 }
-public class MainNhanVien {
+public class MainPhong {
     public static void main(String[] args) {
-        QuanLyNhanVien ql = new QuanLyNhanVien();
-        ql.them(new NhanVien(1, "Nguyen Van A"));
-        ql.them(new NhanVien(2, "Tran Thi B"));
+        QuanLyPhong ql = new QuanLyPhong();
+        ql.them(new Phong(1, "Phong A"));
+        ql.them(new Phong(2, "Phong B"));
 
-        System.out.println("Danh sach nhan vien:");
+        System.out.println("Danh sach phong:");
         ql.xem();
 
-        ql.sua(1, "Nguyen Van A (Updated)");
+        ql.sua(1, "Phong A (Updated)");
         ql.xoa(2);
 
         System.out.println("Sau khi cap nhat:");
         ql.xem();
     }
+}
