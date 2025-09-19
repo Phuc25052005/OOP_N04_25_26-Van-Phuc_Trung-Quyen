@@ -1,5 +1,7 @@
 <img width="1034" height="778" alt="{A3F45771-E7E9-404B-98DB-60F1F26676EF}" src="https://github.com/user-attachments/assets/fe5c226a-aabe-4de9-9792-f50285b7c00d" />
 
+
+# Đối tượng Khach Hang
 public class KhachHang {
     private int id;
     private String ten;
@@ -78,11 +80,6 @@ public class KhachHangDAO {
     }
 }
 
-# Hotel Management App
-
-Ứng dụng quản lý khách sạn với các chức năng CRUD cho Khách hàng, Nhân viên và Phòng.  
-
----
 
 ## Activity Diagram – Quản lý Khách hàng
 
@@ -110,30 +107,7 @@ flowchart TD
     Z --> L([Hoàn tất thao tác])
 ```
 
-```
-```mermaid
-flowchart TD
-    A([Người dùng]) --> B[Chọn chức năng Phòng]
-    B --> C{Chọn thao tác nào?}
 
-    C -->|Thêm| D[Nhập thông tin phòng]
-    D --> E[Lưu vào danh sách]
-    E --> Z[Kết thúc]
-
-    C -->|Xem| F[Hiển thị danh sách phòng]
-    F --> Z
-
-    C -->|Sửa| G[Chọn phòng cần sửa]
-    G --> H[Nhập thông tin mới]
-    H --> I[Cập nhật trong danh sách]
-    I --> Z
-
-    C -->|Xóa| J[Chọn phòng cần xóa]
-    J --> K[Xóa khỏi danh sách]
-    K --> Z
-
-    Z --> L([Hoàn tất thao tác])
-```
 # Đối tượng Nhân Viên :
 import java.util.HashMap;
 
@@ -193,6 +167,31 @@ public class MainNhanVien {
         ql.xem();
     }
 }
+## Activity Diagram – Quản lý nhân viên
+```mermaid
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Nhân viên]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin nhân viên]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách nhân viên]
+    F --> Z
+
+    C -->|Sửa| G[Chọn nhân viên cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn nhân viên cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
+```
+
 
 # Đối tượng Phòng :
 
@@ -254,3 +253,27 @@ public class MainPhong {
         ql.xem();
     }
 }
+## Activity Diagram – Quản lý phòng
+```mermaid
+flowchart TD
+    A([Người dùng]) --> B[Chọn chức năng Phòng]
+    B --> C{Chọn thao tác nào?}
+
+    C -->|Thêm| D[Nhập thông tin phòng]
+    D --> E[Lưu vào danh sách]
+    E --> Z[Kết thúc]
+
+    C -->|Xem| F[Hiển thị danh sách phòng]
+    F --> Z
+
+    C -->|Sửa| G[Chọn phòng cần sửa]
+    G --> H[Nhập thông tin mới]
+    H --> I[Cập nhật trong danh sách]
+    I --> Z
+
+    C -->|Xóa| J[Chọn phòng cần xóa]
+    J --> K[Xóa khỏi danh sách]
+    K --> Z
+
+    Z --> L([Hoàn tất thao tác])
+```
