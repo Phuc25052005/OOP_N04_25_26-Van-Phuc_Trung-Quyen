@@ -192,27 +192,3 @@ public class MainNhanVien {
         System.out.println("Sau khi cap nhat:");
         ql.xem();
     }
-}
-
-```
-flowchart TD
-    A([Người dùng]) --> B[Chọn chức năng Nhân viên]
-    B --> C{Chọn thao tác nào?}
-
-    C -->|Thêm| D[Nhập thông tin nhân viên]
-    D --> E[Lưu vào danh sách]
-    E --> Z[Kết thúc]
-
-    C -->|Xem| F[Hiển thị danh sách nhân viên]
-    F --> Z
-
-    C -->|Sửa| G[Chọn nhân viên cần sửa]
-    G --> H[Nhập thông tin mới]
-    H --> I[Cập nhật trong danh sách]
-    I --> Z
-
-    C -->|Xóa| J[Chọn nhân viên cần xóa]
-    J --> K[Xóa khỏi danh sách]
-    K --> Z
-
-    Z --> L([Hoàn tất thao tác])
