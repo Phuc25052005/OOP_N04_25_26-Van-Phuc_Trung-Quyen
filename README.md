@@ -112,4 +112,3 @@ flowchart TD
     C3 -->|Xóa| J3[Chọn Phòng cần xóa] --> K3[Xóa Phòng khỏi danh sách] --> Z
 
     Z([Hoàn tất thao tác])
-Nguyễn văn PhúcPhúc
